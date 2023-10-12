@@ -241,6 +241,7 @@ exports.createStudent = async function (req, res) {
 exports.readStudents = async function (req, res) {
   // 클라이언트 요청에서 쿼리 파리머터를 빼내는 것 = 파싱
   const { studentIdx } = req.params;
+  // const {studentName} = req.query;
 
   try {
     const connection = await pool.getConnection(async (conn) => conn);
@@ -277,7 +278,7 @@ exports.example = async function (req, res) {
       return res.send({
         result: rows,
         isSuccess: true,
-        code: 200, // 요청 실패시 400번대 코드
+        code: 200, // 요청 실패시 400번대 코드, 성공은 200번
         message: "요청 성공",
       });
     } catch (err) {

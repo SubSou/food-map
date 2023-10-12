@@ -26,7 +26,6 @@ async function getDataSet(category) {
   let qs = category;
 
   if (!qs) {
-    console.log("통과");
     qs = "";
   }
 
@@ -195,7 +194,7 @@ async function setting() {
   try {
     const dataSet = await getDataSet();
     setMap(dataSet);
-  } catch (error) {
+  } catch (err) {
     console.log(err);
   }
 }

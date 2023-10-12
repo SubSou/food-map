@@ -12,7 +12,7 @@ exports.selectRestaurants = async function (connection, category) {
   const Params = [category];
 
   const rows = await connection.query(Query, Params);
-
+  console.log(rows);
   return rows;
 };
 
