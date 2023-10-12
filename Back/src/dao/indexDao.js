@@ -12,7 +12,6 @@ exports.selectRestaurants = async function (connection, category) {
   const Params = [category];
 
   const rows = await connection.query(Query, Params);
-  console.log(rows);
   return rows;
 };
 
@@ -47,7 +46,6 @@ exports.isValidStudentIdx = async function (connection, studentIdx) {
 
   const [rows] = await connection.query(Query, Params);
   if (rows < 1) {
-    console.log(rows);
     return false;
   }
 

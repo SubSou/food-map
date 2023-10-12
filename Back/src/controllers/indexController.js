@@ -78,7 +78,6 @@ exports.deleteStudent = async function (req, res) {
 
       const [rows] = await indexDao.deleteStudent(connection, studentIdx);
       // mysql 접속과 관련된 부분을 정의하는 함수, DB접근 관련 로직을 적어놈
-      console.log(rows);
 
       return res.send({
         isSuccess: true,
